@@ -12,7 +12,7 @@ export default class OstMask extends Component {
   }
 
   showUpdata = () => {
-
+    
     if (this.props.show) {
       this.container && this.container.removeEventListener('animationend',  this.removeContainer)
       this.state._preventBgScroll.afterOpen();
@@ -27,14 +27,14 @@ export default class OstMask extends Component {
       this.refs.defaultPopup.style.top = this.props.top || `calc(50% - (${this.refs.defaultPopup.clientHeight/2}px))`
     }
   }
-
+ 
   componentDidMount() {
 
     this.showUpdata()
   }
 
   componentDidUpdate(prevProps) {
-
+    
     if (prevProps.show !==  this.props.show) {
       this.showUpdata()
     }
@@ -59,7 +59,7 @@ export default class OstMask extends Component {
 
   getComponent = () => {
     const {show, onClick, type} = this.props;
-
+  
     return (
       <div>
         {

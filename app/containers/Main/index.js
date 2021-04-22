@@ -7,8 +7,6 @@ import SPINACIA from './SPINACIA.svg';
 import pkg from '../../../package.json';
 import Version from './components/Version'
 
-// import { findDOMNode } from "react-dom";
-
 
 class Main extends Component {
 
@@ -17,11 +15,6 @@ class Main extends Component {
     const { actions } = this.props;
     actions.initMainPage();
     document.title = 'spinacia-react-redux';
-  }
-
-  componentDidMount(){
-    // this.el = findDOMNode(this);
-    // console.log(el)
   }
 
   render() {
@@ -36,7 +29,7 @@ class Main extends Component {
         : <div className="Main" key='1'>
           <img src={SPINACIA} alt=""/>
           <h2>SPINACIA-REACT</h2>
-          <span>react with redux test</span>
+          <span>react with redux</span>
           <Version
             list={[
               {webpack},

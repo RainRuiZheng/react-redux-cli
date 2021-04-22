@@ -78,13 +78,13 @@ spinacia-react-redux            #npx 命令生成的文件夹
 
 or
 
-` cd <folder name>`
+`cd <folder name>`
 
 ## Start develop
 
 `npm start`
 
-打开链接: http://localhost:3000/
+打开链接: <http://localhost:3000/>
 
 ## Start production
 
@@ -143,6 +143,11 @@ or
 
 #### Eslnt in vscode
 
-该脚手架使用了 Eslnt 来规范代码，若使用 vscode 来开发项目, 在安装了`eslint` 插件后可以在编辑器设置中设置 `eslint.autoFixOnSave ` 为 `true`, 这样在你保存代码时候，浏览器会帮你修复一些 `eslint` 检测出的错误；
+该脚手架使用了 Eslnt 来规范代码，若使用 vscode 来开发项目, 在安装了`eslint` 插件后可以在编辑器设置中设置 `eslint.autoFixOnSave` 为 `true`, 这样在你保存代码时候，浏览器会帮你修复一些 `eslint` 检测出的错误；
 
-##### cssc https://www.cnblogs.com/zhangnan35/p/12682925.html
+###### 更多特性待补充
+
+### 升级 webpack5
+
+问题 1：webpack5 TypeError: Cannot add property htmlWebpackPluginAlterChunks, object is not extensible
+解决：yarn add --dev html-webpack-plugin
