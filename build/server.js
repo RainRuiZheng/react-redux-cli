@@ -83,14 +83,15 @@ new WebpackDevServer(webpack({
       },
       {
         test: /\.(jpe?g|png|gif)(\?.+)?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10*1024,
-            },
-          },
-        ],
+        type: "asset",
+        // use: [
+        //   {
+        //     loader: 'url-loader',
+        //     options: {
+        //       limit: 10*1024,
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.md$/,
