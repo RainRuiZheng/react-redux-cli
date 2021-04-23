@@ -69,12 +69,12 @@ new WebpackDevServer(webpack({
           path.join(basePath, './build')
         ]
       },
+      // {
+      //   test: /\.(c|le)ss$/,
+      //   use: ['style-loader', 'css-loader', "postcss-loader"]
+      // },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', "postcss-loader"]
-      },
-      {
-        test: /\.less$/,
+        test: /\.(c|le)ss$/,
         use: ['style-loader', 'css-loader', "postcss-loader", 'less-loader']
       },
       {

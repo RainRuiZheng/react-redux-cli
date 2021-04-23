@@ -154,4 +154,4 @@ or
 
 2、配置 resolve.alias
 3、url-loader 配置（如果文件小于字节限制，则可以返回 DataURL）
-4、
+4、CSS loader 会把把非根路径的 url 解释为相对路径， 加~前缀才会解释成模块路径( url("~@/image/avatar.jpeg"))

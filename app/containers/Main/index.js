@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-22 16:58:30
- * @LastEditTime: 2021-04-22 20:00:57
+ * @LastEditTime: 2021-04-23 15:58:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-redux-cli/app/containers/Main/index.js
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { OstLoading } from 'ost-ui';
 import './style.less';
 import okImg from '@/image/ok.png'
-import avatarImg from '@/image/avatar.jpeg';
+// import avatarImg from '@/image/avatar.jpeg';
 import pkg from '../../../package.json';
 import Version from './components/Version';
 import { Connect } from './connect';
@@ -36,7 +36,8 @@ class Main extends Component {
       isFetching
         ? null
         : <div className="Main" key='1'>
-          <img src={avatarImg} alt=""/>
+          {/* <img src={avatarImg} alt=""/> */}
+          <span className="avatarImg"></span>
           <img src={okImg} alt=""/>
           <h2>SPINACIA-REACT</h2>
           <span>react with redux</span>
