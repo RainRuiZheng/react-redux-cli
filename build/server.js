@@ -46,8 +46,12 @@ new WebpackDevServer(webpack({
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
       // guards against forgotten dependencies and such.
       PnpWebpackPlugin
-    ]
+    ],
+      alias: {
+        '@': path.resolve(basePath, 'app'),
+      },
   },
+
   resolveLoader: {
     plugins: [
       // Also related to Plug'n'Play, but this time it tells Webpack to load its loaders
@@ -58,7 +62,7 @@ new WebpackDevServer(webpack({
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js(x)?$/,
         loader: 'babel-loader',
         include: [
           path.join(basePath, './app'),
@@ -79,7 +83,14 @@ new WebpackDevServer(webpack({
       },
       {
         test: /\.(jpe?g|png|gif)(\?.+)?$/,
-        loader : 'url-loader'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10*1024,
+            },
+          },
+        ],
       },
       {
         test: /\.md$/,

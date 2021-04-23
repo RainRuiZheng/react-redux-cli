@@ -1,11 +1,20 @@
+/*
+ * @Author: your name
+ * @Date: 2021-04-22 16:58:30
+ * @LastEditTime: 2021-04-22 20:00:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /react-redux-cli/app/containers/Main/index.js
+ */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { OstLoading } from 'ost-ui';
-import { Connect } from './connect';
 import './style.less';
-import SPINACIA from './SPINACIA.svg';
+import okImg from '@/image/ok.png'
+import avatarImg from '@/image/avatar.jpeg';
 import pkg from '../../../package.json';
-import Version from './components/Version'
+import Version from './components/Version';
+import { Connect } from './connect';
 
 
 class Main extends Component {
@@ -14,7 +23,7 @@ class Main extends Component {
     super(props, context);
     const { actions } = this.props;
     actions.initMainPage();
-    document.title = 'spinacia-react-redux';
+    document.title = 'react-redux';
   }
 
   render() {
@@ -27,7 +36,8 @@ class Main extends Component {
       isFetching
         ? null
         : <div className="Main" key='1'>
-          <img src={SPINACIA} alt=""/>
+          <img src={avatarImg} alt=""/>
+          <img src={okImg} alt=""/>
           <h2>SPINACIA-REACT</h2>
           <span>react with redux</span>
           <Version

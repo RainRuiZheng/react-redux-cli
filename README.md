@@ -151,3 +151,7 @@ or
 
 问题 1：webpack5 TypeError: Cannot add property htmlWebpackPluginAlterChunks, object is not extensible
 解决：yarn add --dev html-webpack-plugin
+
+2、配置 resolve.alias
+3、url-loader 配置（如果文件小于字节限制，则可以返回 DataURL）
+4、
