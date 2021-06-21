@@ -167,7 +167,10 @@ module.exports = {
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
       // guards against forgotten dependencies and such.
       PnpWebpackPlugin
-    ]
+    ],
+      alias: {
+        '@': path.resolve(basePath, 'app'),
+      },
   },
   resolveLoader: {
     plugins: [
@@ -179,49 +182,36 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js(x)?$/,
         loader: 'babel-loader',
         include: [
           path.join(basePath, './app'),
           path.join(basePath, './build')
         ]
       },
+      // {
+      //   test: /\.(c|le)ss$/,
+      //   use: ['style-loader', 'css-loader', "postcss-loader"]
+      // },
       {
-        test: /\.(le|c)ss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // only enable hot in development
-              hmr: process.env.NODE_ENV === 'development',
-              // if hmr does not work, this is a forceful method.
-              reloadAll: true,
-              publicPath: '../../'
-            }
-          },
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
+        test: /\.(c|le)ss$/,
+        use: ['style-loader', 'css-loader', "postcss-loader", 'less-loader']
       },
       {
-        test: /\.(ttf|eot|svg|woff|woff2)(\?.+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[contenthash:8].[ext]',
-          outputPath: 'static/media/',
-          publicPath: ENV_CONF.publicPath ? path.join(ENV_CONF.publicPath, 'static/media/') : ''
-        }
+        test: /\.(eot|svg|ttf|woff|woff2)(\?.+)?$/,
+        loader : 'file-loader'
       },
       {
         test: /\.(jpe?g|png|gif)(\?.+)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: '[name].[contenthash:8].[ext]',
-          outputPath: 'static/media/',
-          publicPath: ENV_CONF.publicPath ? path.join(ENV_CONF.publicPath, 'static/media/') : ''
-        }
+        type: "asset",
+        // use: [
+        //   {
+        //     loader: 'url-loader',
+        //     options: {
+        //       limit: 10*1024,
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.md$/,
@@ -231,4 +221,4 @@ module.exports = {
   }
 };
 
-console.log('module.exports ',module.exports)
+// console.log('module.exports ',module.exports)

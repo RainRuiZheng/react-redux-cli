@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-04-21 05:46:54
+ * @LastEditTime: 2021-05-10 16:23:48
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /react-redux-cli/build/assets.js
+ */
 
 module.exports = {
   dev: {
